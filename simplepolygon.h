@@ -10,7 +10,7 @@ class SimplePolygon : public QGraphicsItem
 {
 public:
     explicit SimplePolygon(int pCount, int width, int height, QGraphicsItem* parent = nullptr);
-
+    bool point_in_polygon(const Cpoint& z);
 protected:
     std::vector<CPoint> points;
     void paint(QPainter* painter,

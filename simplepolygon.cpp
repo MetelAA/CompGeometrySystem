@@ -31,6 +31,30 @@ SimplePolygon::SimplePolygon(int pCount, int width, int height, QGraphicsItem *p
               });
 }
 
+bool SimplePolygon::point_in_polygon(const CPoint& z){
+    size_t intersections = 0;
+    for (size_t i = 0, j = this->points.size() -1 ; i < this->points.size(); j=i, i++) {
+        CPoint b = this->points.at(i);
+        CPoint t = this->points.at(i);
+        if (b.y() > t.y()){
+            std::swap(b, t);
+        }
+        if (b.y() < z.y() && t.y() >= z.y() && CPoint::orientation(b, t, z) == CPoint::OrientationTypes::right){
+            intersections++;
+        }
+    }
+
+    return intersections % 2 == 1;
+}
+
+bool SimplePolygon::point_in_polygon(const CPoint& z){
+    size_t l = 0, r = this->points.size()-1;
+    while(){
+
+    }
+
+}
+
 void SimplePolygon::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
     QPolygonF polygon;
