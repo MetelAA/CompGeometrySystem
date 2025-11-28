@@ -11,24 +11,32 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QGraphicsView>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
+#include "graphicalinterface.h"
 
 QT_BEGIN_NAMESPACE
 
 class Ui_GraphicalInterface
 {
 public:
-    QGraphicsView *graphicsView;
+    QVBoxLayout *verticalLayout;
+    CustomGraphicsView *graphicsView;
 
     void setupUi(QWidget *GraphicalInterface)
     {
         if (GraphicalInterface->objectName().isEmpty())
             GraphicalInterface->setObjectName("GraphicalInterface");
-        GraphicalInterface->resize(716, 494);
-        graphicsView = new QGraphicsView(GraphicalInterface);
+        GraphicalInterface->resize(901, 633);
+        verticalLayout = new QVBoxLayout(GraphicalInterface);
+        verticalLayout->setSpacing(0);
+        verticalLayout->setObjectName("verticalLayout");
+        verticalLayout->setContentsMargins(0, 0, 0, 0);
+        graphicsView = new CustomGraphicsView(GraphicalInterface);
         graphicsView->setObjectName("graphicsView");
-        graphicsView->setGeometry(QRect(0, 20, 721, 481));
+
+        verticalLayout->addWidget(graphicsView);
+
 
         retranslateUi(GraphicalInterface);
 

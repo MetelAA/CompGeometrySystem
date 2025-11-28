@@ -9,18 +9,21 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    customgraphicsview.cpp \
     graphicalinterface.cpp \
     main.cpp \
     mainwindow.cpp \
-    simplepolygon.cpp \
-    src/cpoint.cpp
+    src/cpoint.cpp \
+    starpolygon.cpp
 
 HEADERS += \
     GenerationType.h \
+    customgraphicsview.h \
+    custompolygon.h \
     graphicalinterface.h \
     mainwindow.h \
-    simplepolygon.h \
-    src/cpoint.h
+    src/cpoint.h \
+    starpolygon.h
 
 FORMS += \
     graphicalinterface.ui \

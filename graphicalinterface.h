@@ -3,22 +3,29 @@
 
 #include <QWidget>
 #include <QGraphicsScene>
+#include "GenerationType.h"
 
-namespace Ui {
-class GraphicalInterface;
-}
+class CustomGraphicsView;
+class CPoint;
+class CustomPolygon;
 
 class GraphicalInterface : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit GraphicalInterface(QWidget *parent = nullptr);
+    explicit GraphicalInterface(GenerationType polygonType, int pointsCount, QWidget *parent = nullptr);
+    void callback(const CPoint& p);
     ~GraphicalInterface();
 
 private:
-    Ui::GraphicalInterface *ui;
     QGraphicsScene *scene;
+    int width = 1300, height = 950;
+    int pointsCount;
+    GenerationType polygonType;
+    CustomPolygon* polygon;
+    CustomGraphicsView* customView;
+    QCursor redCurs, greenCurs;
 };
 
 #endif // GRAPHICALINTERFACE_H

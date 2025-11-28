@@ -11,10 +11,11 @@ public:
     };
 
     CPoint(qreal x, qreal y);
+    CPoint(const QPointF& point);
 
     CPoint operator+(const CPoint& other) const;
     CPoint operator-(const CPoint& other) const;
-    qreal operator*(const CPoint& other) const;
+    qreal pseudoScalarMult(const CPoint& other) const;
     static OrientationTypes orientation(const CPoint& a, const CPoint& b, const CPoint& c);
 };
 

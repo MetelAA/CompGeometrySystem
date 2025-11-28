@@ -1,16 +1,16 @@
-#ifndef SIMPLEPOLYGON_H
-#define SIMPLEPOLYGON_H
+#ifndef STARPOLYGON_H
+#define STARPOLYGON_H
 
-#include <QGraphicsItem>
 #include<QPainter>
 #include "src/cpoint.h"
 #include <vector>
+#include "custompolygon.h"
 
-class SimplePolygon : public QGraphicsItem
+class StarPolygon : public CustomPolygon
 {
 public:
-    explicit SimplePolygon(int pCount, int width, int height, QGraphicsItem* parent = nullptr);
-    bool point_in_polygon(const Cpoint& z);
+    StarPolygon(int pCount, int width, int height, QGraphicsItem* parent = nullptr);
+    bool point_in_polygon(const CPoint& z) override;
 protected:
     std::vector<CPoint> points;
     void paint(QPainter* painter,
@@ -19,4 +19,4 @@ protected:
     QRectF boundingRect() const override;
 };
 
-#endif // SIMPLEPOLYGON_H
+#endif // STARPOLYGON_H

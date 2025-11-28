@@ -2,6 +2,8 @@
 
 CPoint::CPoint(qreal x, qreal y) : QPointF(x, y) {}
 
+CPoint::CPoint(const QPointF &point) : QPointF(point.x(), point.y()){}
+
 CPoint CPoint::operator+(const CPoint &other) const
 {
     return CPoint(this->x() + other.x(), this->y()+other.y());
@@ -13,7 +15,7 @@ CPoint CPoint::operator-(const CPoint &other) const
 }
 
 
-qreal CPoint::operator*(const CPoint &other) const
+qreal CPoint::pseudoScalarMult(const CPoint &other) const
 {
     return (this->x()*other.y() - this->y()*other.x());
 }
@@ -21,12 +23,12 @@ qreal CPoint::operator*(const CPoint &other) const
 
 CPoint::OrientationTypes CPoint::orientation(const CPoint &a, const CPoint &b, const CPoint &c)
 {
-    CPoint ab = a - b;
-    CPoint ac = a - c;
-    qreal scalarComposition = ab * ac;
-    if(scalarComposition <= 1e-7){
+    CPoint ab = b - a;
+    CPoint ac = c - a;
+    qreal scalarComposition = ab.pseudoScalarMult(ac);
+    if (qAbs(scalarComposition) <= 1e-9) {
         return OrientationTypes::collinear;
-    }else if(scalarComposition > 0){
+    } else if (scalarComposition > 0) {
         return OrientationTypes::left;
     }
     return OrientationTypes::right;

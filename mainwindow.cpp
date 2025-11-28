@@ -33,7 +33,7 @@ void MainWindow::on_generateBtn_clicked()
         qDebug() << ui->generationType->currentText();
         qDebug() << static_cast<int>(type);
 
-        GraphicalInterface *interface = new GraphicalInterface();
+        GraphicalInterface *interface = new GraphicalInterface(type, number);
         interface->show();
 
     } catch (const std::invalid_argument& e) {
