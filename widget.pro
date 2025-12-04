@@ -10,23 +10,31 @@ CONFIG += c++17
 
 SOURCES += \
     customgraphicsview.cpp \
-    graphicalinterface.cpp \
+    interface/graphicalinterface.cpp \
     main.cpp \
     mainwindow.cpp \
-    src/cpoint.cpp \
-    starpolygon.cpp
+    src/points/cpoint.cpp \
+    src/polygons/convexpolygon.cpp \
+    src/polygons/simplepolygon.cpp \
+    src/polygons/starpolygon.cpp \
+    src/shells/convexhull.cpp \
+    src/shells/randompointsset.cpp
 
 HEADERS += \
     GenerationType.h \
     customgraphicsview.h \
     custompolygon.h \
-    graphicalinterface.h \
+    interface/graphicalinterface.h \
     mainwindow.h \
-    src/cpoint.h \
-    starpolygon.h
+    src/points/cpoint.h \
+    src/polygons/convexpolygon.h \
+    src/polygons/simplepolygon.h \
+    src/polygons/custompolygon.h \
+    src/polygons/starpolygon.h \
+    src/shells/convexhull.h \
+    src/shells/randompointsset.h
 
 FORMS += \
-    graphicalinterface.ui \
     mainwindow.ui
 
 # Default rules for deployment.

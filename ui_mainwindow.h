@@ -49,6 +49,7 @@ public:
         generationType->addItem(QString());
         generationType->addItem(QString());
         generationType->addItem(QString());
+        generationType->addItem(QString());
         generationType->setObjectName("generationType");
         generationType->setGeometry(QRect(0, 0, 691, 27));
         generationType->setStyleSheet(QString::fromUtf8("font: 12pt \"Segoe UI\";"));
@@ -79,10 +80,11 @@ public:
 "li.checked::marker { content: \"\\2612\"; }\n"
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", nullptr));
-        angleCountTextInput->setPlaceholderText(QCoreApplication::translate("MainWindow", "\320\222\320\262\320\265\320\264\320\270\321\202\320\265 \320\272\320\276\320\273\320\270\321\207\320\265\321\201\321\202\320\262\320\276 \321\203\320\263\320\273\320\276\320\262  ", nullptr));
-        generationType->setItemText(0, QCoreApplication::translate("MainWindow", "star polygon", nullptr));
-        generationType->setItemText(1, QCoreApplication::translate("MainWindow", "non-convex polygon", nullptr));
+        angleCountTextInput->setPlaceholderText(QCoreApplication::translate("MainWindow", "\320\222\320\262\320\265\320\264\320\270\321\202\320\265 \320\272\320\276\320\273\320\270\321\207\320\265\321\201\321\202\320\262\320\276 \321\202\320\276\321\207\320\265\320\272", nullptr));
+        generationType->setItemText(0, QCoreApplication::translate("MainWindow", "simple poygon", nullptr));
+        generationType->setItemText(1, QCoreApplication::translate("MainWindow", "star polygon", nullptr));
         generationType->setItemText(2, QCoreApplication::translate("MainWindow", "convex polygon", nullptr));
+        generationType->setItemText(3, QCoreApplication::translate("MainWindow", "convex hull", nullptr));
 
     } // retranslateUi
 

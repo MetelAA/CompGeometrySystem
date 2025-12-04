@@ -2,18 +2,19 @@
 #define GENERATIONTYPE_H
 
 enum class GenerationType{
-    StarPolygon, ConvexPolygon, NonConvexPolygon
+    SimplePolygon, StarPolygon, ConvexPolygon, ConvexHull
 };
 
 inline GenerationType generationTypeFromString(const QString& str) {
     static QHash<QString, GenerationType> mapping = {
+        {"simple polygon", GenerationType::SimplePolygon},
         {"star polygon", GenerationType::StarPolygon},
         {"convex polygon", GenerationType::ConvexPolygon},
-        {"non-convex polygon", GenerationType::NonConvexPolygon}
+        {"convex hull", GenerationType::ConvexHull}
     };
 
 
-    return mapping.value(str, GenerationType::ConvexPolygon); // значение по умолчанию
+    return mapping.value(str, GenerationType::SimplePolygon); // значение по умолчанию
 }
 
 #endif // GENERATIONTYPE_H

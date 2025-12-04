@@ -1,0 +1,13 @@
+release/customgraphicsview.o
+release/graphicalinterface.o
+release/main.o
+release/mainwindow.o
+release/cpoint.o
+release/convexpolygon.o
+release/simplepolygon.o
+release/starpolygon.o
+release/convexhull.o
+release/randompointsset.o
+release/moc_customgraphicsview.o
+release/moc_graphicalinterface.o
+release/moc_mainwindow.o

@@ -3,7 +3,7 @@
 #include <QGraphicsView>
 #include <QWheelEvent>
 #include <QMouseEvent>
-#include "starpolygon.h"
+#include "src/polygons/simplepolygon.h"
 
 class GraphicalInterface;
 

@@ -3,7 +3,7 @@
 #include <QtDebug>
 #include <QMessageBox>
 #include "GenerationType.h"
-#include <graphicalinterface.h>
+#include "interface/graphicalinterface.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)

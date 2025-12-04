@@ -1,6 +1,6 @@
 #include "customgraphicsview.h"
-#include "src/cpoint.h"
-#include "graphicalinterface.h"
+#include "src/points/cpoint.h"
+#include "interface/graphicalinterface.h"
 
 
 CustomGraphicsView::CustomGraphicsView(int width, int height, GraphicalInterface* callback, QWidget *parent) : QGraphicsView(parent), width(width), height(height), callback(callback)
@@ -18,6 +18,7 @@ CustomGraphicsView::CustomGraphicsView(int width, int height, GraphicalInterface
     setDragMode(QGraphicsView::ScrollHandDrag);
 
     setSceneRect(QRectF((-1) * this->width, (-1) * this->height, (2) * this->width, (2) * this->height));
+    // setSceneRect(QRectF(0, 0, (1) * this->width, (1) * this->height));
     setMinimumSize(this->width, this->height);
 }
 
@@ -33,10 +34,9 @@ void CustomGraphicsView::wheelEvent(QWheelEvent *event)
 
 void CustomGraphicsView::mouseMoveEvent(QMouseEvent *event)
 {
-    CPoint point(event->pos());
-    // call
-    // qDebug() << "View position:" << pos << "Scene position:" << scenePos;
+    QPoint viewPos = event->pos();
+    QPointF scenePos = mapToScene(viewPos);
+    CPoint point(scenePos.x(), scenePos.y());
     this->callback->callback(point);
     QGraphicsView::mouseMoveEvent(event);
 }
-

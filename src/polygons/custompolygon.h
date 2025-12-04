@@ -1,8 +1,10 @@
 #ifndef CUSTOMPOLYGON_H
 #define CUSTOMPOLYGON_H
 
+#include <QPainter>
 #include <QGraphicsItem>
 #include "GenerationType.h"
+#include "src/points/cpoint.h"
 
 class CPoint;
 
@@ -12,6 +14,8 @@ public:
     CustomPolygon(GenerationType type, QGraphicsItem* parent = nullptr) : type(type), QGraphicsItem(parent){}
     GenerationType type;
     virtual bool point_in_polygon(const CPoint& z) = 0;
+protected:
+    std::vector<CPoint> points;
 };
 
 #endif // CUSTOMPOLYGON_H
