@@ -88,6 +88,11 @@ li.checked::marker { content: &quot;\2612&quot;; }
       <string>convex hull</string>
      </property>
     </item>
+    <item>
+     <property name="text">
+      <string>triangulation</string>
+     </property>
+    </item>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

@@ -4,7 +4,7 @@
 #include <QMessageBox>
 #include "GenerationType.h"
 #include "interface/graphicalinterface.h"
-
+#include "interface/triangulationinterface.h"
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -32,9 +32,13 @@ void MainWindow::on_generateBtn_clicked()
 
         qDebug() << ui->generationType->currentText();
         qDebug() << static_cast<int>(type);
-
-        GraphicalInterface *interface = new GraphicalInterface(type, number);
-        interface->show();
+        if(type == GenerationType::Triangulation){
+            TriangulationInterface *interface = new TriangulationInterface(number);
+            interface->show();
+        }else{
+            GraphicalInterface *interface = new GraphicalInterface(type, number);
+            interface->show();
+        }
 
     } catch (const std::invalid_argument& e) {
         QMessageBox::warning(this, "Ошибка", "Неверный формат числа!");

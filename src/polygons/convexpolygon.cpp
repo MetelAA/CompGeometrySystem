@@ -29,11 +29,9 @@ ConvexPolygon::ConvexPolygon(int pCount, int width, int height, QGraphicsItem* p
     std::vector<CPoint> points;
     int x, y;
     QPointF scenePos = this->pos();
-    qDebug() << "points:";
     for(int i = 0; i < pCount; i++){
         x = scenePos.x() + radius * std::cos(angles[i]);
         y = scenePos.y() + radius * std::sin(angles[i]);
-        qDebug() << "x/y: " << x << "/" << y;
         points.push_back(CPoint(x, y));
     }
 

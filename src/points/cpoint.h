@@ -17,6 +17,7 @@ public:
     CPoint operator-(const CPoint& other) const;
     qreal pseudoScalarMult(const CPoint& other) const;
     static OrientationTypes orientation(const CPoint& a, const CPoint& b, const CPoint& c);
+    static bool isPointInTriangle(const CPoint& p, const CPoint& a, const CPoint& b, const CPoint& c);
 };
 
 

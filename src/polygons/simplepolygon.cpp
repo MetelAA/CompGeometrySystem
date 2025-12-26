@@ -39,8 +39,6 @@ SimplePolygon::SimplePolygon(int pCount, int width, int height, QGraphicsItem *p
         qreal localY = p.y();
         qreal sceneX = localX + scenePos.x();
         qreal sceneY = localY + scenePos.y();
-
-        qDebug() <<  "x/y: (" << sceneX << ", " << sceneY << "\n";
     }
 }
 

@@ -11,6 +11,7 @@ CONFIG += c++17
 SOURCES += \
     customgraphicsview.cpp \
     interface/graphicalinterface.cpp \
+    interface/triangulationinterface.cpp \
     main.cpp \
     mainwindow.cpp \
     src/points/cpoint.cpp \
@@ -18,13 +19,16 @@ SOURCES += \
     src/polygons/simplepolygon.cpp \
     src/polygons/starpolygon.cpp \
     src/shells/convexhull.cpp \
-    src/shells/randompointsset.cpp
+    src/shells/randompointsset.cpp \
+    src/polygons/custompolygon.cpp \
+    src/triangulation/triangulationearclipping.cpp
 
 HEADERS += \
     GenerationType.h \
     customgraphicsview.h \
     custompolygon.h \
     interface/graphicalinterface.h \
+    interface/triangulationinterface.h \
     mainwindow.h \
     src/points/cpoint.h \
     src/polygons/convexpolygon.h \
@@ -32,7 +36,8 @@ HEADERS += \
     src/polygons/custompolygon.h \
     src/polygons/starpolygon.h \
     src/shells/convexhull.h \
-    src/shells/randompointsset.h
+    src/shells/randompointsset.h \
+    src/triangulation/triangulationearclipping.h
 
 FORMS += \
     mainwindow.ui

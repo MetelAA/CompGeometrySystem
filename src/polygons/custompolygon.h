@@ -11,9 +11,10 @@ class CPoint;
 class CustomPolygon : public QGraphicsItem
 {
 public:
-    CustomPolygon(GenerationType type, QGraphicsItem* parent = nullptr) : type(type), QGraphicsItem(parent){}
+    CustomPolygon(GenerationType type, QGraphicsItem* parent = nullptr);
     GenerationType type;
     virtual bool point_in_polygon(const CPoint& z) = 0;
+    std::vector<CPoint>& getPoints();  // Только объявление, без реализации
 protected:
     std::vector<CPoint> points;
 };

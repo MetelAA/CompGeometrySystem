@@ -2,7 +2,7 @@
 #define GENERATIONTYPE_H
 
 enum class GenerationType{
-    SimplePolygon, StarPolygon, ConvexPolygon, ConvexHull
+    SimplePolygon, StarPolygon, ConvexPolygon, ConvexHull, Triangulation
 };
 
 inline GenerationType generationTypeFromString(const QString& str) {
@@ -10,7 +10,8 @@ inline GenerationType generationTypeFromString(const QString& str) {
         {"simple polygon", GenerationType::SimplePolygon},
         {"star polygon", GenerationType::StarPolygon},
         {"convex polygon", GenerationType::ConvexPolygon},
-        {"convex hull", GenerationType::ConvexHull}
+        {"convex hull", GenerationType::ConvexHull},
+        {"triangulation", GenerationType::Triangulation}
     };
 
 

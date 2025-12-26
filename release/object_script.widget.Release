@@ -1,5 +1,6 @@
 release/customgraphicsview.o
 release/graphicalinterface.o
+release/triangulationinterface.o
 release/main.o
 release/mainwindow.o
 release/cpoint.o
@@ -8,6 +9,9 @@ release/simplepolygon.o
 release/starpolygon.o
 release/convexhull.o
 release/randompointsset.o
+release/custompolygon.o
+release/triangulationearclipping.o
 release/moc_customgraphicsview.o
 release/moc_graphicalinterface.o
+release/moc_triangulationinterface.o
 release/moc_mainwindow.o

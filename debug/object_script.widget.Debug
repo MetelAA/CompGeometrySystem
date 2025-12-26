@@ -1,0 +1,17 @@
+debug/customgraphicsview.o
+debug/graphicalinterface.o
+debug/triangulationinterface.o
+debug/main.o
+debug/mainwindow.o
+debug/cpoint.o
+debug/convexpolygon.o
+debug/simplepolygon.o
+debug/starpolygon.o
+debug/convexhull.o
+debug/randompointsset.o
+debug/custompolygon.o
+debug/triangulationearclipping.o
+debug/moc_customgraphicsview.o
+debug/moc_graphicalinterface.o
+debug/moc_triangulationinterface.o
+debug/moc_mainwindow.o

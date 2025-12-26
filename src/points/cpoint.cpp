@@ -20,6 +20,17 @@ qreal CPoint::pseudoScalarMult(const CPoint &other) const
     return (this->x()*other.y() - this->y()*other.x());
 }
 
+bool CPoint::isPointInTriangle(const CPoint &p, const CPoint &a, const CPoint &b, const CPoint &c)
+{
+    CPoint::OrientationTypes o1 = orientation(a, b, p);
+    CPoint::OrientationTypes o2 = orientation(b, c, p);
+    CPoint::OrientationTypes o3 = orientation(c, a, p);
+
+    // Если все ориентации одинаковые (все Left или все Right) - точка внутри
+    return (o1 == o2 && o2 == o3);
+}
+
+
 
 CPoint::OrientationTypes CPoint::orientation(const CPoint &a, const CPoint &b, const CPoint &c)
 {

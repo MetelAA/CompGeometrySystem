@@ -1,0 +1,10 @@
+debug/customgraphicsview.o
+debug/custompolygon.o
+debug/graphicalinterface.o
+debug/main.o
+debug/mainwindow.o
+debug/cpoint.o
+debug/starpolygon.o
+debug/moc_customgraphicsview.o
+debug/moc_graphicalinterface.o
+debug/moc_mainwindow.o

@@ -50,6 +50,7 @@ public:
         generationType->addItem(QString());
         generationType->addItem(QString());
         generationType->addItem(QString());
+        generationType->addItem(QString());
         generationType->setObjectName("generationType");
         generationType->setGeometry(QRect(0, 0, 691, 27));
         generationType->setStyleSheet(QString::fromUtf8("font: 12pt \"Segoe UI\";"));
@@ -85,6 +86,7 @@ public:
         generationType->setItemText(1, QCoreApplication::translate("MainWindow", "star polygon", nullptr));
         generationType->setItemText(2, QCoreApplication::translate("MainWindow", "convex polygon", nullptr));
         generationType->setItemText(3, QCoreApplication::translate("MainWindow", "convex hull", nullptr));
+        generationType->setItemText(4, QCoreApplication::translate("MainWindow", "triangulation", nullptr));
 
     } // retranslateUi
 

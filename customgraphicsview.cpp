@@ -34,9 +34,11 @@ void CustomGraphicsView::wheelEvent(QWheelEvent *event)
 
 void CustomGraphicsView::mouseMoveEvent(QMouseEvent *event)
 {
-    QPoint viewPos = event->pos();
-    QPointF scenePos = mapToScene(viewPos);
-    CPoint point(scenePos.x(), scenePos.y());
-    this->callback->callback(point);
+    if(this->callback != nullptr){
+        QPoint viewPos = event->pos();
+        QPointF scenePos = mapToScene(viewPos);
+        CPoint point(scenePos.x(), scenePos.y());
+        this->callback->callback(point);
+    }
     QGraphicsView::mouseMoveEvent(event);
 }
